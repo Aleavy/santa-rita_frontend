@@ -1,1 +1,27 @@
 @import "tailwindcss";
+
+.right {
+  &::after {
+    transition: opacity 0.2s ease-out;
+    opacity: 0;
+  }
+}
+
+.middle {
+  &::before {
+    transform: rotate(45deg);
+    transition: transform 0.5s ease-in;
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+    transition: transform 0.5s ease-in;
+  }
+}
+
+.left {
+  &::after {
+    transition: opacity 0.2s ease-out;
+    opacity: 0;
+  }
+}
