@@ -7,6 +7,10 @@
   }
 }
 
+.ham-menu {
+  opacity: 0;
+}
+
 .middle {
   &::before {
     transform: rotate(45deg);
