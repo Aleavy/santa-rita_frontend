@@ -2,20 +2,20 @@
 .offscreen-menu {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   text-align: center;
-  height: 100vh;
+  min-height: 60vh;
   width: 100%;
   left: -450px;
   font-size: 3rem;
   position: fixed;
-  background-color: black;
+  background-color: white;
   transition: 0.3s ease-in;
   max-width: 450px;
 }
 
 .offscreen-menu.active {
+  color: black;
   left: 0;
   z-index: 9;
 }
@@ -23,6 +23,7 @@
 .ham-menu {
   height: 50px;
   width: 50px;
+  cursor: pointer;
   margin-right: auto;
   position: relative;
 }
