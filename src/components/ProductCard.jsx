@@ -28,11 +28,11 @@ export function parsePrice(price) {
 export function ProductCard({ product }) {
   return (
     <div className="w-[100%] p-4 flex flex-col justify-center items-center border-[1px] border-gray-300 shadow-lg rounded-2xl">
-      <a href="" className="mb-6 max-w-30">
+      <a href="" className="mb-6 max-w-30 min-w-2xs">
         <img
           src={product.image}
           alt="producto"
-          className="mix-blend-color-burn object-cover aspect-2/3 rounded"
+          className="w-[100%] h-[100%] object-contain"
         />
       </a>
       <div className="min-w-28 text-white font-bold bg-amber-800 rounded-full p-1">

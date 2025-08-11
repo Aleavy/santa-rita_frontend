@@ -1,14 +1,21 @@
-import { Header } from "./components/Header";
-import { ProductGrid } from "./components/ProductGrid";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { HomePage } from "./pages/HomePage";
+import { AdminPage } from "./pages/AdminPage";
+import { CreateProductPage } from "./pages/CreateProductPage";
+import { ProductView } from "./components/ProductView";
 
 function App() {
   return (
-    <>
-      <Header url="public\logo.jpg" alt="logo" />
-      <main className="my-4">
-        <ProductGrid />
-      </main>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/crear-producto" element={<CreateProductPage />} />
+        <Route path="/" element={<Navigate to="/home" />} />
+        <Route path="/home" element={<HomePage />} />
+        <Route path="/admin" element={<AdminPage />} />
+        <Route path="/producto/:id" element={<CreateProductPage />} />
+        <Route path="/producto/ver/:id" element={<ProductView />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
