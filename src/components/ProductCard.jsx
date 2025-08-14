@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export function reverseString(str) {
   let res = str.split("");
   res = res.reverse();
@@ -27,20 +29,22 @@ export function parsePrice(price) {
 
 export function ProductCard({ product }) {
   return (
-    <div className="w-[100%] p-4 flex flex-col justify-center items-center border-[1px] border-gray-300 shadow-lg rounded-2xl">
-      <a href="" className="mb-6 max-w-30 min-w-2xs">
-        <img
-          src={product.image}
-          alt="producto"
-          className="w-[100%] h-[100%] object-contain"
-        />
-      </a>
-      <div className="min-w-28 text-white font-bold bg-amber-800 rounded-full p-1">
-        <h1>₲{parsePrice(product.price)}</h1>
-      </div>
-      <div className="mx-2 text-gray-700">
-        <p>{}helloosdaosdoasjdoasjdo asdkjaskdasjdk</p>
-      </div>
+    <div className="xl:w-[80%] w-[100%] px-6 py-8 flex flex-col justify-center items-center border-[1px] border-gray-300 shadow-lg rounded-2xl">
+      <Link to={`/producto/ver/${product.id}`} className="w-[100%] flex flex-col justify-center items-center">
+          <div className="mb-6 aspect-square overflow-hidden">
+            <img 
+              src={product.image}
+              alt="producto"
+              className=" w-[100%] object-cover h-[100%]"
+            />  
+          </div>
+        <div className="w-[65%] sm:w-[70%] lg:w-[48%] xl:w-[40%] text-white font-bold bg-blue-800 rounded-full p-1 mb-2">
+          <h1>₲{parsePrice(product.price)}</h1>
+        </div>
+        <div className="mx-2 text-gray-700 font-normal text-lg  ">
+          <p>{product.name}</p>
+        </div>
+      </Link>
     </div>
   );
 }

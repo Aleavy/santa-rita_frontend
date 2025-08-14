@@ -16,12 +16,12 @@ export const ProductTableItem = ({ product }) => {
             deleteProduct(product.id);
             window.location.reload();
           }}
-          className="bg-red-600 text-white rounded-xs p-2"
+          className="hover:cursor-pointer bg-red-600 text-white rounded-xs p-2"
         >
           Delete
         </button>
         <Link to={`/producto/${product.id}`}>
-          <button className="hover:bg-cyan-400 hover:text-gray-500 p-2 rounded-xs">
+          <button className="hover:cursor-pointer hover:bg-cyan-400 hover:text-gray-500 p-2 rounded-xs">
             Edit
           </button>
         </Link>

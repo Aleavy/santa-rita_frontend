@@ -30,6 +30,10 @@ export const getAllCategories = () => {
   return taskApi.get("/categories/");
 };
 
+export const getAuthToken = (user) =>{
+  return taskApi.post('/api-token-auth/', user)
+} 
+
 export const getProductsByCategory = (categoryName) => {
   return taskApi.get(`/products/${categoryName}/`);
 };

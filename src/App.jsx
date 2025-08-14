@@ -3,6 +3,7 @@ import { HomePage } from "./pages/HomePage";
 import { AdminPage } from "./pages/AdminPage";
 import { CreateProductPage } from "./pages/CreateProductPage";
 import { ProductView } from "./components/ProductView";
+import { LoginPage } from "./pages/LoginPage";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/admin" element={<AdminPage />} />
         <Route path="/producto/:id" element={<CreateProductPage />} />
         <Route path="/producto/ver/:id" element={<ProductView />} />
+        <Route path="/login" element={<LoginPage />} />
       </Routes>
     </BrowserRouter>
   );

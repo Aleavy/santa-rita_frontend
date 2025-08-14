@@ -1,4 +1,5 @@
 import { HamburguerMenu } from "./HamburguerMenu";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   return (
@@ -9,10 +10,11 @@ export const Header = () => {
           <h2 className="sr-only sm:not-sr-only text-white text-base font-semibold">
             Categorias
           </h2>
-          <h2 className="w-[100%] text-center text-2xl font-bold font-serif text-white">
-            Farmacia Vega
-          </h2>
-
+          <Link to="/" className="w-[100%] text-center text-2xl font-bold font-serif text-white">
+            <h2 className="w-[100%] text-center text-2xl font-bold font-serif text-white">
+              Farmacia Vega
+            </h2>
+          </Link>
           <div className="bg-[url(/public/cart-shopping-regular-full.svg)] w-15 h-15 bg-no-repeat bg-center"></div>
         </nav>
       </header>

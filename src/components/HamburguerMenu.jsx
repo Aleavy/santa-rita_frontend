@@ -24,7 +24,7 @@ export const HamburguerMenu = () => {
 
   return (
     <>
-      <div className="offscreen-menu items-start justify-start top-0 sm:top-[50px]">
+      <div className="border-1 border-gray-300 offscreen-menu items-start justify-start top-0 sm:top-[50px]">
         <div
           onClick={crossX}
           className="sm:hidden cursor-pointer py-2 px-4 w-[100%] font-light bg-gray-100 flex tracking-widest gap-3 items-center text-sm/7 text-black"
@@ -32,7 +32,7 @@ export const HamburguerMenu = () => {
           <span className="text-xl">X</span>
           <span className="font-bold text-base">Cerrar</span>
         </div>
-
+        
         {categories.map((category) => (
           <CategoryCard key={category.id} category={category} />
         ))}
