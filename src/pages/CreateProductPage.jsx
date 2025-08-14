@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 export const CreateProductPage = () => {
+  const inputPhoto = document.getElementById("img");
   const [options, setOptions] = useState([]);
   const [selection, setSelection] = useState("");
   const [imageFile, setImageFile] = useState(null);
@@ -36,7 +37,9 @@ export const CreateProductPage = () => {
     formData.append("description", data.description);
     formData.append("category", data.category);
     formData.append("price", data.price);
-    formData.append("image", imageFile);
+    if (imageFile) {
+      formData.append("image", imageFile);
+    }
 
     try {
       if (params.id) {
@@ -56,7 +59,11 @@ export const CreateProductPage = () => {
         const prod = await getProduct(params.id);
         console.log(prod.data);
         setValue("name", prod.data.name);
-        setValue("image", prod.data.image);
+        if (
+          imageFile
+            ? setValue("image", imageFile)
+            : () => console.log("img not changed")
+        );
         setValue("description", prod.data.description);
         setValue("price", prod.data.price);
         setValue("category", prod.data.category);
@@ -112,6 +119,7 @@ export const CreateProductPage = () => {
         />
 
         <input
+          id="img"
           type="file"
           accept="image/png, image/jpeg"
           name="file"

@@ -15,15 +15,15 @@ export const createProduct = (product) => {
 };
 
 export const getProduct = (id) => {
-  return taskApi.get(`/products/${id}`);
+  return taskApi.get(`/products/${id}/`);
 };
 
 export const updateProduct = (id, product) => {
-  return taskApi.put(`/products/${id}`, product);
+  return taskApi.patch(`/products/${id}/`, product);
 };
 
 export const deleteProduct = (id) => {
-  return taskApi.delete(`/products/${id}`);
+  return taskApi.delete(`/products/${id}/`);
 };
 
 export const getAllCategories = () => {
