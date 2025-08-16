@@ -2,16 +2,21 @@ import { ProductCard } from "./ProductCard";
 import { useEffect, useState } from "react";
 import { getAllProducts } from "../api/products.api";
 
-export function ProductGrid() {
+export function ProductGrid({ func = getAllProducts, category = false }) {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
     const loadProducts = async () => {
-      const res = await getAllProducts();
+      let res;
+      if (!category) {
+        res = await func();
+      } else {
+        res = await func(category);
+      }
       setProducts(res.data);
     };
     loadProducts();
-  }, []);
+  }, [category]);
 
   return (
     <>

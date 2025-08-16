@@ -6,12 +6,13 @@ import { ProductTableItem } from "./ProductTableItem";
 export const ProductTable = () => {
   const [products, setProducts] = useState([]);
 
+  const loadProducts = async () => {
+    const res = await getAllProducts();
+    console.log(res.data);
+    setProducts(res.data);
+  };
+
   useEffect(() => {
-    const loadProducts = async () => {
-      const res = await getAllProducts();
-      console.log(res.data);
-      setProducts(res.data);
-    };
     loadProducts();
   }, []);
 
@@ -21,10 +22,17 @@ export const ProductTable = () => {
         <Link to="/crear-producto">
           <button>Create task</button>
         </Link>
+        <Link to="/crear-categoria">
+          <button>Create categoria</button>
+        </Link>
       </div>
       <div>
         {products.map((product) => (
-          <ProductTableItem key={product.id} product={product} />
+          <ProductTableItem
+            key={product.id}
+            product={product}
+            reload={loadProducts}
+          />
         ))}
       </div>
     </>

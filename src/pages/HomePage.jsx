@@ -5,9 +5,10 @@ import { Link } from "react-router-dom";
 export const HomePage = () => {
   return (
     <>
+      {console.log(localStorage)}
       <Header />
       <main className="my-4">
-        <Link to="/admin">hellloo</Link>
+        <Link to="/admin">Admin</Link>
         <ProductGrid />
       </main>
     </>

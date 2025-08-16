@@ -25,15 +25,22 @@ export const updateProduct = (id, product) => {
 export const deleteProduct = (id) => {
   return taskApi.delete(`/products/${id}/`);
 };
+export const deleteCategory = (id) => {
+  return taskApi.delete(`/categories/${id}/`);
+};
 
 export const getAllCategories = () => {
   return taskApi.get("/categories/");
 };
 
-export const getAuthToken = (user) =>{
-  return taskApi.post('/api-token-auth/', user)
-} 
+export const createCategory = (category) => {
+  return taskApi.post("/categories/", category);
+};
+
+export const getAuthToken = (user) => {
+  return taskApi.post("/api-token-auth/", user);
+};
 
 export const getProductsByCategory = (categoryName) => {
-  return taskApi.get(`/products/${categoryName}/`);
+  return taskApi.get(`/products/category/${categoryName}/`);
 };

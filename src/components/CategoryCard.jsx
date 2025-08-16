@@ -9,9 +9,11 @@ export const CategoryCard = ({ category }) => {
   return (
     <Link
       className="cursor-pointer ml-2 px-4 py-2 w-[100%] font-light hover:bg-amber-100/40 flex items-center text-base/7 text-black"
-      to={`http://127.0.0.1:8000/api/v1/products/${category.name}/`}
+      to={`/productos/categoria/${category.name}`}
     >
-      <div className="font-normal text-black/70">{capitalize(category.name)}</div>
+      <div className="font-normal text-black/70">
+        {capitalize(category.name)}
+      </div>
     </Link>
   );
 };

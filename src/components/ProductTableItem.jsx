@@ -1,7 +1,12 @@
 import { Link } from "react-router-dom";
 import { deleteProduct } from "../api/products.api";
 
-export const ProductTableItem = ({ product }) => {
+export const ProductTableItem = ({ product, reload }) => {
+  const handleDelete = async () => {
+    await deleteProduct(product.id);
+    reload();
+  };
+
   return (
     <div className="hover:bg-amber-50 flex gap-4">
       <Link
@@ -12,17 +17,14 @@ export const ProductTableItem = ({ product }) => {
       </Link>
       <div className="block">
         <button
-          onClick={() => {
-            deleteProduct(product.id);
-            window.location.reload();
-          }}
+          onClick={handleDelete}
           className="hover:cursor-pointer bg-red-600 text-white rounded-xs p-2"
         >
-          Delete
+          Eliminar
         </button>
         <Link to={`/producto/${product.id}`}>
           <button className="hover:cursor-pointer hover:bg-cyan-400 hover:text-gray-500 p-2 rounded-xs">
-            Edit
+            Editar
           </button>
         </Link>
       </div>
