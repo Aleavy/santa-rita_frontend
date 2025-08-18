@@ -2,6 +2,16 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getAllProducts } from "../api/products.api";
 import { ProductTableItem } from "./ProductTableItem";
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+  TableFooter,
+} from "@/components/ui/table";
 
 export const ProductTable = () => {
   const [products, setProducts] = useState([]);
@@ -17,7 +27,7 @@ export const ProductTable = () => {
   }, []);
 
   return (
-    <>
+    <div className="h-100">
       <div>
         <Link to="/crear-producto">
           <button>Create task</button>
@@ -28,13 +38,9 @@ export const ProductTable = () => {
       </div>
       <div>
         {products.map((product) => (
-          <ProductTableItem
-            key={product.id}
-            product={product}
-            reload={loadProducts}
-          />
+          <ProductTableItem key={product.id} product={product} />
         ))}
       </div>
-    </>
+    </div>
   );
 };

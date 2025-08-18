@@ -8,10 +8,10 @@ export const ProductTableItem = ({ product, reload }) => {
   };
 
   return (
-    <div className="hover:bg-amber-50 flex gap-4">
+    <div className="hover:bg-amber-50 grid grid-cols-2 justify-center items-center gap-4">
       <Link
         to={`/producto/ver/${product.id}`}
-        className="hover:text-gray-200 text-black underline"
+        className="hover:text-gray-200 text-black underline border-1 border-gray-400 h-full text-center rounded"
       >
         <p>{product.name}</p>
       </Link>

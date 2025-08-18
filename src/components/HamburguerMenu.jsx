@@ -32,7 +32,7 @@ export const HamburguerMenu = () => {
           <span className="text-xl">X</span>
           <span className="font-bold text-base">Cerrar</span>
         </div>
-        
+
         {categories.map((category) => (
           <CategoryCard key={category.id} category={category} />
         ))}

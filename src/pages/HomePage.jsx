@@ -6,9 +6,9 @@ export const HomePage = () => {
   return (
     <>
       {console.log(localStorage)}
-      <Header />
       <main className="my-4">
         <Link to="/admin">Admin</Link>
+        <Link to="/login">Login</Link>
         <ProductGrid />
       </main>
     </>

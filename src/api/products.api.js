@@ -18,6 +18,10 @@ export const getProduct = (id) => {
   return taskApi.get(`/products/${id}/`);
 };
 
+export const getProductsByName = (name) => {
+  return taskApi.get(`products/search/${name}`);
+};
+
 export const updateProduct = (id, product) => {
   return taskApi.patch(`/products/${id}/`, product);
 };
