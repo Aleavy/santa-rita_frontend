@@ -10,15 +10,16 @@ export const AccountMenu = () => {
   return (
     <div className="relative">
       <div onClick={toggleMenu} className="flex justify-center items-center">
-        <img src={personIcon} alt="" className="w-10" />
+        <img src={personIcon} alt="" className="w-8" />
       </div>
 
       <div
         id="menuDrop"
-        className="absolute right-0 translate-x-1/3 flex flex-col border-b-1 border-gray-400 z-10 bg-cyan-400 rounded py-1 w-40 justify-center items-center"
+        className="absolute flex flex-col -translate-x-[40%] border-b-1 border-gray-400 z-10 bg-cyan-400 rounded py-1 w-40 justify-center items-center"
       >
         <Link
           to="/admin"
+          onClick={toggleMenu}
           className="hover:bg-blue-700/20 w-full text-center rounded text-white text-base font-semibold"
         >
           Admin

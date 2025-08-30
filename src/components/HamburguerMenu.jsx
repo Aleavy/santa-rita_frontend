@@ -33,12 +33,17 @@ export const HamburguerMenu = () => {
           <span className="text-xl">X</span>
           <span className="font-bold text-base">Cerrar</span>
         </div>
-        
-          <Link to={'/login'} className="cursor-pointer ml-2 px-4 font-semibold py-2 w-[100%] font-light hover:bg-amber-100/40 flex items-center text-base/7 text-black">Iniciar Sesion</Link>
-        
+
+        <Link
+          to={"/login"}
+          onClick={crossX}
+          className="cursor-pointer ml-2 px-4 font-semibold py-2 w-[100%] hover:bg-amber-100/40 flex items-center text-base/7 text-black"
+        >
+          Iniciar Sesion
+        </Link>
 
         {categories.map((category) => (
-          <CategoryCard key={category.id} category={category} />
+          <CategoryCard key={category.id} category={category} action={crossX} />
         ))}
       </div>
       <div onClick={crossX} className="ham-menu">
