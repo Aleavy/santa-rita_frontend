@@ -30,7 +30,7 @@ export const ProductTable = () => {
           <div className="flex justify-center items-center lg:col-span-2"><p>Precio</p></div>
           <div className="flex justify-center items-center col-span-1"><p>Acciones</p></div>
         </div>
-        <div className="border-1 border-gray-100 overflow-y-scroll shadow-xl">
+        <div className="border-1 border-gray-100 overflow-y-scroll w-full max-h-[500px] shadow-xl">
         {products.map((product) => (
           <ProductTableItem key={product.id} handleUpdate={handleUpdate} product={product} products={products} />
         ))}

@@ -20,7 +20,7 @@ export function ProductGrid({ func = getAllProducts, category = false }) {
 
   return (
     <>
-      <div className="sm:grid-cols-3 grid gap-2 text-center wrap-anywhere grid-cols-1 px-6">
+      <div className="mb-4 sm:grid-cols-3 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6 items-center justify-center grid gap-2 text-center wrap-anywhere lg:px-0 px-6">
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}

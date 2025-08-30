@@ -7,17 +7,35 @@ import { CreateCategoryPage } from "./pages/CreateCategoryPage";
 import { ProductView } from "./components/ProductView";
 import { LoginPage } from "./pages/LoginPage";
 import { ProductsByCategoryPage } from "./pages/ProductsByCategoryPage";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import {isUserLogged } from "./store/cart";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
+    const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(isUserLogged());
+  }, [dispatch]);
+
+
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route path="/crear-producto" element={<CreateProductPage />} />
-          <Route path="/crear-categoria" element={<CreateCategoryPage />} />
           <Route index element={<HomePage />} />
-          <Route path="/admin" element={<AdminPage />} />
-          <Route path="/producto/:id" element={<CreateProductPage />} />
+          
+            <Route path="/admin" 
+            element={
+            <PrivateRoute>
+              <AdminPage />
+            </PrivateRoute>} />
+          
+          <Route path="/producto/:id" element={
+            <PrivateRoute>
+              <CreateProductPage />
+              </PrivateRoute>} />
           <Route
             path="/productos/categoria/:category"
             element={<ProductsByCategoryPage />}

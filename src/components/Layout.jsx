@@ -17,7 +17,7 @@ export const Layout = () => {
         <Outlet />
       </main>
       <CartTab />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

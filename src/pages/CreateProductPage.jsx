@@ -3,7 +3,10 @@ import { CreateProductForm } from "../components/CreateProductForm";
 export const CreateProductPage = () => {
   return (
     <>
-      <CreateProductForm></CreateProductForm>
+
+        <CreateProductForm className='absolute top-0 '></CreateProductForm>
+      
     </>
+
   );
 };

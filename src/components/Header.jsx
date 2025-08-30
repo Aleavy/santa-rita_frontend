@@ -24,7 +24,7 @@ export const Header = () => {
 
   return (
     <>
-      <header className="h-fit bg-cyan-400 px-4 py-2 flex flex-row content-center items-center sticky w-full top-0">
+      <header className="h-fit z-10 bg-cyan-400 px-4 py-2 flex flex-row content-center items-center sticky w-full top-0">
         <nav className="sm:px-6 w-[100%] h-full flex flex-row justify-between items-center ">
           <div className="flex justify-center items-center">
             <HamburguerMenu></HamburguerMenu>
@@ -53,7 +53,7 @@ export const Header = () => {
           </div>
         </nav>
       </header>
-      <button onClick={handleOpenTabCart}>Click</button>
+      
     </>
   );
 };

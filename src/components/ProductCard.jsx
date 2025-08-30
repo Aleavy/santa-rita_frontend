@@ -45,34 +45,38 @@ export function ProductCard({ product }) {
   };
 
   return (
-    <div className="xl:w-[80%] w-[100%] px-6 py-8 flex flex-col justify-center items-center border-[1px] border-gray-300 shadow-lg rounded-2xl">
+    <div className="px-6 w-70 sm:w-58 py-8 grid grid-rows-2 items-center border-[1px] border-gray-300 shadow-lg rounded-2xl">
       <Link
         to={`/producto/ver/${product.id}`}
-        className="w-[100%] flex flex-col justify-center items-center"
+        className="row-span-2 w-full flex flex-col justify-center items-center"
       >
-        <div className="mb-6 aspect-square overflow-hidden">
+        <div className="size-full]">
           <img
             src={product.image}
             alt="producto"
-            className=" w-[100%] object-cover h-[100%]"
+            className="w-50 h-38 rounded"
           />
         </div>
-
-        <div className=" text-gray-700 font-normal text-3xl mb-2 ">
+      </Link>
+      <Link
+      to={`/producto/ver/${product.id}`}>
+        <div className="my-4 text-gray-700 font-normal text-base mb-2 ">
           <p>{product.name}</p>
         </div>
       </Link>
-      <div className="grid grid-rows- grid-flow-row gap-2">
-        <div className="h-fit text-white font-bold bg-blue-800 rounded-full p-1 text-lg">
-          <h1>₲{parsePrice(product.price)}</h1>
+      <div className="flex">
+        <div className="gap-3 flex justify-center items-center flex-col w-full">
+          <div className="w-full place-self-end text-xl text-black rounded-full p-1">
+            <h1 className="text-blue-600 font-semibold place-self-end">₲{parsePrice(product.price)}</h1>
+          </div>
+          <button
+            onClick={handleAddToCart}
+            className="h-fit bg-green-400 p-2 rounded-md text-xl sm:text-lg hover:bg-green-500 flex gap-2 text-white font-semibold cursor-pointer"
+          >
+            <img src={IconCart} alt="" className="w-5 " />
+            Agregar
+          </button>
         </div>
-        <button
-          onClick={handleAddToCart}
-          className="h-fit bg-green-400 p-2 rounded-md text-lg hover:bg-green-500 flex gap-2 text-white font-semibold cursor-pointer"
-        >
-          <img src={IconCart} alt="" className="w-5 " />
-          Agregar al carrito
-        </button>
       </div>
     </div>
   );

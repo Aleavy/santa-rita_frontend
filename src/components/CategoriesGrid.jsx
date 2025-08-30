@@ -15,14 +15,20 @@ export const CategoriesGrid = () => {
 
   return (
     <>
-      <div>
-        {categories.map((category) => (
-          <CategoryTableItem
-            key={category.id}
-            category={category}
-            reload={loadCategories}
-          />
-        ))}
+      <div className="grid w-full md:w-[50%]"  >
+        <div className="grid grid-cols-2 ">
+          <div className="flex justify-center items-center"><h2>Nombre</h2></div>
+          <div className="flex justify-center items-center"><h2>Accion</h2></div>
+        </div>
+        <div className="flex flex-col items-center w-full  overflow-y-scroll max-h-[70%]">
+          {categories.map((category) => (
+            <CategoryTableItem
+              key={category.id}
+              category={category}
+              reload={loadCategories}
+            />
+          ))}
+        </div>
       </div>
     </>
   );
